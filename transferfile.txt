@@ -1,0 +1,6 @@
+TOKEN="$(curl -s http://10.0.3.161/rest/user/login \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"admin@juice-sh.op","password":"123"}' \
+  | jq -r '.authentication.token')"
+
+echo "$TOKEN"
